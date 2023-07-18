@@ -6,9 +6,15 @@ import { useState } from "react";
 const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
   const [listaTareas, setListaTareas] = useState([]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setListaTareas([...listaTareas, tarea]);
+    setTarea("");
+  };
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3 d-flex" controlId="Tarea">
           <Form.Control
             type="text"
@@ -16,7 +22,9 @@ const FormularioTarea = () => {
             value={tarea}
             onChange={(e) => setTarea(e.target.value)}
           />{" "}
-          <Button variant="primary">agregar</Button>
+          <Button variant="primary" type="submit">
+            agregar
+          </Button>
         </Form.Group>
       </Form>
       <ListaTareas></ListaTareas>
