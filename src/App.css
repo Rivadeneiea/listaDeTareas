@@ -7,3 +7,6 @@
 .mainPage {
   flex-grow: 1;
 }
+.footer {
+  text-decoration-color: aliceblue;
+}
