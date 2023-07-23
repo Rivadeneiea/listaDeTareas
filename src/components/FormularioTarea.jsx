@@ -16,6 +16,10 @@ const FormularioTarea = () => {
       (itemTarea) => itemTarea !== tareaBorrar
     );
     setListaTareas(listaTareasFiltrada);
+    use;
+    useEffect(() => {
+      console.log("ejecuta useEffect");
+    }, [listaTareas]);
   };
   return (
     <>
